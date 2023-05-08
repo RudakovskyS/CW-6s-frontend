@@ -1,0 +1,11 @@
+  <ul  *ngFor="let category of categories"
+      (click)="onSelect(category)">
+    {{category.name}}
+    <li >
+      <div *ngIf="category.isSelected">
+        <li *ngFor="let topic of category.topics">{{topic.name}}</li>
+      </div>
+    </li>
+    
+</ul>
+
