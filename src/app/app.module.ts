@@ -50,5 +50,6 @@ export class AppModule {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon('thumbs-up', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-up.svg'));
     this.matIconRegistry.addSvgIcon('thumbs-down', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-down.svg'));
+    this.matIconRegistry.addSvgIcon('comment', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/comment.svg'));
   }
 }

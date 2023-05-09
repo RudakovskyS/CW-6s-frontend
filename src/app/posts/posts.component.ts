@@ -9,6 +9,11 @@ interface Post{
   topic: Topic
   likes: Like[]
   dislikes: Dislike[]
+  comments: Comment[]
+}
+
+interface Comment{
+  content: string
 }
 
 interface Like{
