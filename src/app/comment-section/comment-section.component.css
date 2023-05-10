@@ -1,0 +1,12 @@
+mat-card{
+    background-color: rgb(188, 188, 188);
+    border: 1px solid black;
+}
+
+mat-card-header{
+    border: 1px solid rgb(205, 205, 205);
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: justify;
+}

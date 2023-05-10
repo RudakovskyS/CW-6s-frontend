@@ -18,6 +18,9 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PostsComponent } from './posts/posts.component';
+import { SinglePostPageComponent } from './single-post-page/single-post-page.component';
+import { CommentSectionComponent } from './comment-section/comment-section.component';
+import { TopicComponent } from './topic/topic.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { PostsComponent } from './posts/posts.component';
     AuthComponent,
     HomeComponent,
     PostsComponent,
+    SinglePostPageComponent,
+    CommentSectionComponent,
+    TopicComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,5 +57,6 @@ export class AppModule {
     this.matIconRegistry.addSvgIcon('thumbs-up', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-up.svg'));
     this.matIconRegistry.addSvgIcon('thumbs-down', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-down.svg'));
     this.matIconRegistry.addSvgIcon('comment', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/comment.svg'));
+    this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/logo.svg'));
   }
 }

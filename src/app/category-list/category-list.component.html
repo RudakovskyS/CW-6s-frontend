@@ -1,13 +1,29 @@
-
-<mat-expansion-panel hideToggle *ngFor="let category of categories">
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      {{category.name}}
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-    <mat-list *ngFor="let topic of category.topics">
-      <mat-list-item>
-        {{topic.name}}
-      </mat-list-item>
-     </mat-list>
-</mat-expansion-panel>
+<div>
+  <button (click)="redirectToHomePage()">
+    <mat-card class="logo">
+          <mat-icon svgIcon="logo"/>Спадарожнік
+    </mat-card>
+  </button>
+  
+  <mat-expansion-panel hideToggle *ngFor="let category of categories">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{category.name}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <mat-list *ngFor="let topic of category.topics">
+        <button (click)="redirectToTopicPage(topic.topic_id)">
+          <mat-list-item>
+            {{topic.name}}
+          </mat-list-item>
+        </button>
+        
+       </mat-list>
+  </mat-expansion-panel>
+    <mat-card class="separated">
+      Тлумачальны слоўнік
+    </mat-card>
+    <mat-card class="separated">
+      Правер сабе!
+    </mat-card>
+</div>

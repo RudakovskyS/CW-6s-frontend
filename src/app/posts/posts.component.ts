@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Post{
+  post_id: number;
   title: string;
   content: string;
   date_created: Date;
@@ -35,14 +37,43 @@ interface Topic{
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit{
-  constructor(private postService: PostsService){}
+export class PostsComponent implements OnInit, OnDestroy{
+  constructor(private postService: PostsService, private router: Router, private route: ActivatedRoute){}
+  ngOnDestroy(): void {
+    this.posts = []
+  }
 
   ngOnInit(): void {
-    this.postService.getAllPosts().subscribe((data: Post[]) =>
-    this.posts = data)
-    console.log();
+    const url = this.route.snapshot.url.map(segment => segment.path).join('/');
+    let id = 0;
+    if(url === ''){
+      this.postService.getAllPosts().subscribe((data: Post[]) =>
+      this.posts = data)
+    } else if(url.startsWith('topic/')){
+      this.route.params.subscribe(params => {
+        id = params['id']
+        this.postService.getTopicPosts(id).subscribe((data: Post[]) =>
+        this.posts = data)
+      })
+    }
     
   }
+
+  redirectToPostPage(post_id: number){
+    this.router.navigate([`/post/${post_id}`]);
+  }
+
+  async likePost(id: number){
+    console.log(id);
+    
+    this.postService.likePost(id)
+    this.ngOnInit()
+  }
+
+  async dislikePost(id: number){
+    this.postService.dislikePost(id)
+    this.ngOnInit()
+  }
+
   posts?: Post[]
 }

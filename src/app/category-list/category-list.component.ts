@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryListService } from '../services/category-list.service';
+import { Router } from '@angular/router';
 
 interface Category {
   name: string;
@@ -8,6 +9,7 @@ interface Category {
 }
 
 interface Topic{
+  topic_id: number;
   name: string;
 }
 
@@ -17,7 +19,7 @@ interface Topic{
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit{
-  constructor(private categoryListService: CategoryListService){}
+  constructor(private categoryListService: CategoryListService, private router: Router){}
 
   ngOnInit(): void {
     this.categoryListService.getCategories().subscribe((data: Category[]) => {
@@ -25,8 +27,12 @@ export class CategoryListComponent implements OnInit{
     })
   }
   
-  onSelect(category: Category): void {
-    category.isSelected = !category.isSelected;
+  redirectToTopicPage(topic_id: number){
+    this.router.navigate([`/topic/${topic_id}`]);
+  }
+
+  redirectToHomePage(){
+    this.router.navigate([``]);
   }
 
   categories?: Category[] 

@@ -12,20 +12,20 @@
     </mat-card-content>
     <mat-card-footer>
         <div>
-            {{post.user.username}}
+            Напісана карыстальнікам {{post.user.username}}
         </div>
         <div>
             {{post.date_created}}
         </div>
     </mat-card-footer>
     <mat-card-actions>
-        <button mat-button>
+        <button mat-button (click)="likePost(post.post_id)">
             <mat-icon svgIcon="thumbs-up"/>{{post.likes.length}}
         </button>
-        <button mat-button>
+        <button mat-button (click)="redirectToPostPage(post.post_id)">
             <mat-icon svgIcon="comment"/>{{post.comments.length}}
         </button>
-        <button mat-button>
+        <button mat-button (click)="dislikePost(post.post_id)">
             <mat-icon svgIcon="thumbs-down"/>{{post.dislikes.length}}
         </button>
     </mat-card-actions>
