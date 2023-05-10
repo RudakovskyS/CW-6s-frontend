@@ -16,3 +16,12 @@ mat-card{
     width: 100%;
     border-top: 1px solid black;
 }
+
+a:visited{
+    color: grey;
+}
+
+
+a{
+    color: grey;
+}
