@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { CategoryListComponent } from './category-list/category-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {AppComponent} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {CategoryListComponent} from './category-list/category-list.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+
 
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +23,8 @@ import { PostsComponent } from './posts/posts.component';
 import { SinglePostPageComponent } from './single-post-page/single-post-page.component';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { TopicComponent } from './topic/topic.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { TopicComponent } from './topic/topic.component';
     SinglePostPageComponent,
     CommentSectionComponent,
     TopicComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,14 +51,14 @@ import { TopicComponent } from './topic/topic.component';
     MatCardModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { 
-
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon('thumbs-up', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-up.svg'));
     this.matIconRegistry.addSvgIcon('thumbs-down', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-down.svg'));

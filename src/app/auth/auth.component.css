@@ -3,3 +3,21 @@
     padding: 8px 8px 8px 8px;
 }
 
+div {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/bgTexture.svg');
+}
+
+mat-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 150px 200px;
+    border-radius: 15px;
+}
+  
+button {
+    font-size: 10px;
+}

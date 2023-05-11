@@ -32,6 +32,4 @@ export class PostsService {
   async dislikePost(id: number) {
    this.http.post(`http://localhost:3000/api/posts/${id}/dislike`, {});
   }
-
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -38,11 +38,8 @@ interface Topic{
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit, OnDestroy{
+export class PostsComponent implements OnInit{
   constructor(private postService: PostsService, private router: Router, private route: ActivatedRoute){}
-  ngOnDestroy(): void {
-    this.posts = []
-  }
 
   ngOnInit(): void {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
