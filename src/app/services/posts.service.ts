@@ -6,9 +6,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
-  
-  
-  
 
   constructor(private http: HttpClient) { }
 
@@ -24,12 +21,11 @@ export class PostsService {
     return this.http.get(`http://localhost:3000/api/posts/topic/${topic_id}`)
   }
 
-  async likePost (id: number) {
-    console.log(id);
+  likePost (id: number) {
     return this.http.post(`http://localhost:3000/api/posts/${id}/like`, {});
   }
 
-  async dislikePost(id: number) {
-   this.http.post(`http://localhost:3000/api/posts/${id}/dislike`, {});
+  dislikePost(id: number) {
+   return this.http.post(`http://localhost:3000/api/posts/${id}/dislike`, {});
   }
 }

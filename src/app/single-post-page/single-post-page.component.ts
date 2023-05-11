@@ -52,14 +52,11 @@ export class SinglePostPageComponent implements OnInit{
 
   async likePost(id: number){
     console.log(id);
-    
     this.postService.likePost(id)
-    this.ngOnInit()
   }
 
   async dislikePost(id: number){
     this.postService.dislikePost(id)
-    this.ngOnInit()
   }
 
   post!: Post;

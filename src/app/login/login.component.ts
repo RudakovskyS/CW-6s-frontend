@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,14 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
   constructor(private authService: AuthService){}
   
+  
   checkCredentials(){
     console.log(this.username, this.password);
-      this.authService.sendCredentials(this.username, this.password).subscribe(data => {
-        console.log(data);
+      this.authService.sendCredentials(this.username, this.password).subscribe((data: any) => {
+        console.log(data.access_token);
+        window.sessionStorage.setItem('access_token', data.access_token);
+        this.username = ''
+        this.password = ''
       })
   }
 

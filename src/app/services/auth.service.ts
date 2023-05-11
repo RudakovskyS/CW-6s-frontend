@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   constructor(private http: HttpClient) { }
 
-  sendCredentials(username: string, password: string) {
+  sendCredentials(username: string, password: string){
     return this.http.post("http://localhost:3000/api/auth/login", {username: username, password: password})
   }
 
@@ -15,4 +15,15 @@ export class AuthService {
     return this.http.post("http://localhost:3000/api/auth/signup", {username: username, password: password})
   }
 
+  getToken(){
+    return window.sessionStorage.getItem('access_token');
+  }
+
+  isLoggedIn(): boolean {
+    return this.getToken() != null;
+  }
+
+  logout(){
+    window.sessionStorage.clear();
+  }
 }

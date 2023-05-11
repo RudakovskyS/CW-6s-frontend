@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CategoryListComponent} from './category-list/category-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -25,6 +25,7 @@ import { CommentSectionComponent } from './comment-section/comment-section.compo
 import { TopicComponent } from './topic/topic.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,9 +53,17 @@ import { LoginComponent } from './login/login.component';
     MatIconModule,
     MatListModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    [
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+      }
+    ],
+  ],
   bootstrap: [AppComponent]
 })
 

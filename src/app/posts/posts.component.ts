@@ -61,16 +61,16 @@ export class PostsComponent implements OnInit{
     this.router.navigate([`/post/${post_id}`]);
   }
 
-  async likePost(id: number){
-    console.log(id);
-    
-    this.postService.likePost(id)
-    this.ngOnInit()
+  likePost(id: number){
+    this.postService.likePost(id).subscribe(data =>{
+      this.ngOnInit()
+    })
   }
 
-  async dislikePost(id: number){
-    this.postService.dislikePost(id)
-    this.ngOnInit()
+  dislikePost(id: number){
+    this.postService.dislikePost(id).subscribe(data =>{
+      this.ngOnInit()
+    })
   }
 
   posts?: Post[]

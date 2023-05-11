@@ -7,11 +7,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  constructor(private authService: AuthService){}
+      
+      constructor(private authService: AuthService){}
 
   registerUser(){
-    console.log(this.username, this.password);
-      this.authService.registerUser(this.username, this.password).subscribe(data => {})
+      this.authService.registerUser(this.username, this.password).subscribe()
+      this.username = ""
+      this.password = ""
   }
 
   username!: string;
