@@ -2,6 +2,11 @@
     <mat-card-subtitle>Каментар ад {{comment.user.username}}</mat-card-subtitle>
     <mat-card-header>{{comment.content}}</mat-card-header>
     <mat-card-subtitle>Напісаны {{comment.date_created}}</mat-card-subtitle>
+    <mat-card-actions *ngIf="currentUser?.isAdmin || currentUser?.user_id == comment.user.user_id">
+        <button mat-button (click)="deleteComment(comment.comment_id)" class="trash">
+            <mat-icon svgIcon="trash" class="trash"/>Выдаліць
+        </button>
+    </mat-card-actions>
 </mat-card>
 <div *ngIf="isLoggedIn">
     <mat-form-field>

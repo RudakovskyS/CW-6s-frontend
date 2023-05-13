@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CommentSectionService {
+  
   constructor(private http: HttpClient) {}
 
   sendComment(commentContent: string, id: number) {
@@ -15,4 +16,7 @@ export class CommentSectionService {
     return this.http.get(`http://localhost:3000/api/comments/post/${id}`)
   }
 
+  deleteComment(id: number) {
+    return this.http.delete(`http://localhost:3000/api/comments/${id}`)
+  }
 }

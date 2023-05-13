@@ -19,6 +19,7 @@ export class CommentSectionComponent implements OnInit {
     });
     this.commentService.getCommentsForPost(this.id).subscribe((data: Comment[]) =>
     this.comments = data)
+    this.currentUser = this.authService.getCurrentUser()
   }
 
   sendComment(){
@@ -27,6 +28,14 @@ export class CommentSectionComponent implements OnInit {
       this.ngOnInit()
     })
   }
+
+  deleteComment(id: number){
+    this.commentService.deleteComment(id).subscribe(() => {
+      this.ngOnInit()
+    })
+  }
+  isAdmin: boolean = false;
+  currentUser?: any
   isLoggedIn!: boolean
   commentContent!: string
   comments?: Comment[]

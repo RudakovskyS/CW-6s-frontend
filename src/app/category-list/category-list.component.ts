@@ -3,7 +3,6 @@ import { CategoryListService } from '../services/category-list.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Category } from '../dto/category.dto';
-import { User } from '../dto/user.dto';
 
 @Component({
   selector: 'app-category-list',
