@@ -9,14 +9,22 @@ import { Comment } from '../dto/comment.dto';
 })
 export class CommentSectionComponent implements OnInit {
   constructor(private commentService: CommentSectionService, private route: ActivatedRoute) {}
+  id = 0;
+  
   ngOnInit(): void {
-    var id = 0;
     this.route.params.subscribe(params => {
-      id = params['id']
+      this.id = params['id']
     });
-    this.commentService.getCommentsForPost(id).subscribe((data: Comment[]) =>
+    this.commentService.getCommentsForPost(this.id).subscribe((data: Comment[]) =>
     this.comments = data)
   }
 
+  sendComment(){
+    this.commentService.sendComment(this.commentContent, this.id).subscribe(() => {
+      this.commentContent = ''
+      this.ngOnInit()
+    })
+  }
+  commentContent!: string;
   comments?: Comment[]
 }

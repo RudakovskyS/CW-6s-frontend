@@ -3,6 +3,7 @@ import { PostsService } from '../services/posts.service';
 import { Category } from '../dto/category.dto';
 import { Topic } from '../dto/topic.dto';
 import { CategoryListService } from '../services/category-list.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-post',
@@ -10,7 +11,7 @@ import { CategoryListService } from '../services/category-list.service';
   styleUrls: ['./post-post.component.css']
 })
 export class PostPostComponent implements OnInit{
-  constructor(private postService: PostsService, private categoryListService: CategoryListService){}
+  constructor(private postService: PostsService, private categoryListService: CategoryListService, private router: Router){}
 
   ngOnInit(): void {
     this.categoryListService.getCategories().subscribe((data: Category[]) => {
@@ -28,7 +29,7 @@ export class PostPostComponent implements OnInit{
     console.log(this.postTitle, this.postContent, this.selectedTopic.topic_id);
     
     this.postService.postPost(this.postTitle, this.postContent, this.selectedTopic.topic_id).subscribe(() =>{
-
+      this.router.navigate(['']);
     });
   }
 }

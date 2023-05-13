@@ -50,5 +50,5 @@ export class PostsComponent implements OnInit{
     })
   }
 
-  posts?: Post[];
+  posts!: Post[];
 }

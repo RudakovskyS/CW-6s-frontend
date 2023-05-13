@@ -25,3 +25,12 @@ a:visited{
 a{
     color: grey;
 }
+
+app-no-content-page{
+    width: 100%;
+    height: 100%;
+}
+
+.isLiked{
+    color:blue
+}

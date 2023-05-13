@@ -1,6 +1,7 @@
 mat-card{
     background-color: rgb(188, 188, 188);
     border: 1px solid black;
+    margin-bottom: 10px;
 }
 
 mat-card-header{
@@ -9,4 +10,19 @@ mat-card-header{
     padding: 10px;
     border-radius: 10px;
     text-align: justify;
+}
+
+div{
+    width: 100%;
+    flex-direction: column;
+}
+
+mat-form-field{
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+}
+
+button{
+    border: 1px solid rgb(172, 172, 172);
 }

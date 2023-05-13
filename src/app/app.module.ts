@@ -31,6 +31,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { PostPostComponent } from './post-post/post-post.component';
 import { MatOptionModule } from '@angular/material/core';
 import { PostPostPageComponent } from './post-post-page/post-post-page.component';
+import { NoContentPageComponent } from './no-content-page/no-content-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PostPostPageComponent } from './post-post-page/post-post-page.component
     UserInfoComponent,
     PostPostComponent,
     PostPostPageComponent,
+    NoContentPageComponent,
   ],
   imports: [
     BrowserModule,

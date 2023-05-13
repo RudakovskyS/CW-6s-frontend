@@ -3,3 +3,9 @@
     <mat-card-header>{{comment.content}}</mat-card-header>
     <mat-card-subtitle>Напісаны {{comment.date_created}}</mat-card-subtitle>
 </mat-card>
+<div>
+    <mat-form-field>
+        <input matInput name="writeComment" [(ngModel)]="commentContent" placeholder="Ваш каментар...">
+    </mat-form-field>
+    <button mat-button (click)="sendComment()">Даслаць каментар</button>
+</div>    

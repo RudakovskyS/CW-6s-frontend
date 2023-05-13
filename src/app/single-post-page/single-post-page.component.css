@@ -29,3 +29,12 @@ div{
     display: flex;
     height: 100%;
 }
+
+a:visited{
+    color: grey;
+}
+
+
+a{
+    color: grey;
+}
