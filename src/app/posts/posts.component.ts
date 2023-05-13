@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../dto/post.dto';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-posts',
@@ -9,12 +10,12 @@ import { Post } from '../dto/post.dto';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit{
-  constructor(private postService: PostsService, private router: Router, private route: ActivatedRoute){}
-
-  ngOnInit(): void {
+  constructor(private postService: PostsService, private router: Router,
+    private route: ActivatedRoute, private authService: AuthService){}
+ 
+  ngOnInit() {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
     let id = 0;
-
     if(url === ''){
       this.postService.getAllPosts().subscribe((data: Post[]) =>
       this.posts = data)
@@ -31,7 +32,7 @@ export class PostsComponent implements OnInit{
         this.posts = data)
       })
     }
-    
+    this.currentUser = this.authService.getCurrentUser()
   }
 
   redirectToPostPage(post_id: number){
@@ -50,5 +51,12 @@ export class PostsComponent implements OnInit{
     })
   }
 
+  deletePost(id: number){
+    this.postService.deletePost(id).subscribe(data =>{
+      this.ngOnInit()
+    })
+  }
+  isAdmin: boolean = false;
+  currentUser?: any
   posts!: Post[];
 }

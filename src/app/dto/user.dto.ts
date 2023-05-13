@@ -10,4 +10,5 @@ export interface User{
     comments: Comment[]
     quizesTaken: number
     correctAnswers: number
+    isAdmin: boolean
 }

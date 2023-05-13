@@ -31,6 +31,11 @@ app-no-content-page{
     height: 100%;
 }
 
-.isLiked{
-    color:blue
+.trash{
+    color: red;
+}
+
+button.trash{
+    border: red 1px solid;
+    color: red;
 }

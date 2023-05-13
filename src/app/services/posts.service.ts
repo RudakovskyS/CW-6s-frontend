@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
+  deletePost(post_id: number) {
+    return this.http.delete(`http://localhost:3000/api/posts/${post_id}`)
+  }
+
   getUserPosts(user_id: number) : Observable<any> {
     return this.http.get(`http://localhost:3000/api/posts/user/${user_id}`)
   }

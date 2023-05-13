@@ -23,6 +23,23 @@ export class AuthService {
     return this.getToken() != null;
   }
 
+  getCurrentUser(){
+    const jwtToken = this.getToken();
+    if (!jwtToken)
+    return 
+    const tokenParts = jwtToken!.split('.');
+    const encodedPayload = tokenParts[1];
+    const decodedPayload = atob(encodedPayload);
+    const payload = JSON.parse(decodedPayload);
+    return {user_id: payload.sub, username: payload.username, isAdmin: payload.isAdmin}
+  }
+
+  isAdmin(): boolean{
+    if (window.sessionStorage.getItem('isAdmin') == 'true') 
+      return true
+    return false;
+  }
+
   logout(){
     window.sessionStorage.clear();
   }

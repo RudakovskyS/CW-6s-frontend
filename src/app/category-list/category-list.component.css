@@ -32,7 +32,13 @@ mat-panel-title{
   font-weight:600;
   text-align: left;
 }
-
+.user-badge{
+  background-color: rgb(149, 201, 231);
+  padding: 10px 20px;
+  font-size: larger;
+  font-weight:600;
+  text-align: center;
+}
 .logo {
   background-color: rgb(149, 201, 231);
   padding: 10px 20px;

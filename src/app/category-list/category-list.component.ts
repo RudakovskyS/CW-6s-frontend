@@ -3,6 +3,7 @@ import { CategoryListService } from '../services/category-list.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Category } from '../dto/category.dto';
+import { User } from '../dto/user.dto';
 
 @Component({
   selector: 'app-category-list',
@@ -17,7 +18,8 @@ export class CategoryListComponent implements OnInit{
       this.categories = data;
     })
      this.isLoggedIn = this.authService.isLoggedIn();
-  }
+     this.currentUser = this.authService.getCurrentUser();
+    }
   
   redirectToTopicPage(topic_id: number){
     this.router.navigate([`/topic/${topic_id}`]);
@@ -31,7 +33,9 @@ export class CategoryListComponent implements OnInit{
 
   redirectToQuizPage(){}
 
-  redirectToUserPage(){}
+  redirectToUserPage(){
+    this.router.navigate([`/user/${this.currentUser?.user_id}`]);
+  }
   
   redirectToPostPostingPage(){
     this.router.navigate(['post']);
@@ -43,8 +47,9 @@ export class CategoryListComponent implements OnInit{
 
   logout(){
     this.authService.logout()
-    this.ngOnInit();
+    location.reload()
   }
+  currentUser?: any
   isLoggedIn?: boolean
   categories?: Category[] 
 }

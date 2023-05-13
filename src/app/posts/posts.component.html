@@ -29,5 +29,8 @@
         <button mat-button (click)="dislikePost(post.post_id)">
             <mat-icon svgIcon="thumbs-down"/>{{post.dislikes.length}}
         </button>
+        <button mat-button (click)="deletePost(post.post_id)" class="trash" *ngIf="currentUser?.isAdmin || currentUser?.user_id == post.user.user_id">
+            <mat-icon svgIcon="trash" class="trash"/>Выдаліць
+        </button>
     </mat-card-actions>
 </mat-card>

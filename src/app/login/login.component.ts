@@ -10,9 +10,7 @@ import {  Router } from '@angular/router';
 export class LoginComponent {
   constructor(private authService: AuthService, private router: Router){}
   
-  
   checkCredentials(){
-    console.log(this.username, this.password);
       this.authService.sendCredentials(this.username, this.password).subscribe((data: any) => {
         window.sessionStorage.setItem('access_token', data.access_token);
         this.username = ''
@@ -20,8 +18,8 @@ export class LoginComponent {
         this.router.navigate(['']);
 
       })
+      
   }
-
   username!: string;
   password!: string;
 }

@@ -86,5 +86,6 @@ export class AppModule {
     this.matIconRegistry.addSvgIcon('thumbs-down', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/thumbs-down.svg'));
     this.matIconRegistry.addSvgIcon('comment', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/comment.svg'));
     this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/logo.svg'));
+    this.matIconRegistry.addSvgIcon('trash', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/trash.svg'));
   }
 }

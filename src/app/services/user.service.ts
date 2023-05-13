@@ -12,4 +12,5 @@ export class UserService {
   getUserPosts(id: number) : Observable<any>{
     return this.http.get(`http://localhost:3000/api/users/${id}`)
   }
+
 }
