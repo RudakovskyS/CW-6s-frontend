@@ -18,12 +18,12 @@ export class UserInfoComponent implements OnInit{
     let id = 0;
 
     if (url.startsWith('user/')) {
-      // // this.route.params.subscribe(params => {
-      // //   id = params['id']
-      // //   this.userService.getTopicPosts(id).subscribe((data: User) =>
-      // //   this.user = data)
-      // })
+      this.route.params.subscribe(params => {
+        id = params['id']
+        this.userService.getUserPosts(id).subscribe((data: User) =>
+        this.user = data)
+      })
     }
   }
-  user?: User
+  user!: User
 }

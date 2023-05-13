@@ -1,3 +1,18 @@
-<mat-card>
-    <mat-card-title></mat-card-title>
-</mat-card>
+<div class="all-info">
+    <div class="general">
+        <mat-card-title>Карыстальнік: {{user.username}}</mat-card-title>
+        <mat-card-subtitle>Статыстыка: {{user.correctAnswers * 100 / user.quizesTaken}}%</mat-card-subtitle>
+    </div>
+    <div class="rates">
+        <mat-card-title>{{user.likes.length}}</mat-card-title>
+        <mat-card-subtitle>Падабайкі</mat-card-subtitle>
+    </div>
+    <div class="rates">
+        <mat-card-title>{{user.dislikes.length}}</mat-card-title>
+        <mat-card-subtitle>Непадабайкі</mat-card-subtitle>
+    </div>
+    <div class="rates">
+        <mat-card-title>{{user.comments.length}}</mat-card-title>
+        <mat-card-subtitle>Каментары</mat-card-subtitle>
+    </div>
+</div>

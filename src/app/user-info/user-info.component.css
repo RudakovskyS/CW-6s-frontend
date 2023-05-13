@@ -1,0 +1,22 @@
+.all-info{
+    margin: 20px;
+    flex-direction: row;
+}
+
+div{
+    display: flex;
+}
+
+.general{
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.rates{
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.rates mat-card-title{
+    text-align: center;
+}

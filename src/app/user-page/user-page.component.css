@@ -6,7 +6,6 @@ app-category-list{
 app-user-info{
     display: column;
     flex-direction: row;
-    
 }
 
 app-posts{
@@ -19,10 +18,10 @@ app-posts{
 div{
     display: flex;
     height: 100%;
+    width: 100%;
 }
 
 .user-container{
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
