@@ -31,4 +31,8 @@ export class PostsService {
   dislikePost(id: number) {
    return this.http.post(`http://localhost:3000/api/posts/${id}/dislike`, {});
   }
+
+  postPost(title: string, content: string, topic_id: number) {
+    return this.http.post('http://localhost:3000/api/posts', {title: title, content: content, topic_id: topic_id})
+  }
 }

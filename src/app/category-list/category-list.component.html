@@ -15,7 +15,12 @@
       username
     </mat-card>
   </button>
-  <mat-expansion-panel hideToggle *ngFor="let category of categories">
+  <button (click)="redirectToPostPostingPage()" *ngIf="isLoggedIn">
+    <mat-card class="separated">
+      Даслаць артыкул!
+    </mat-card>
+  </button>
+  <mat-expansion-panel *ngFor="let category of categories">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{category.name}}

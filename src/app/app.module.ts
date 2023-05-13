@@ -14,7 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-
+import {MatSelectModule} from '@angular/material/select';
 
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
@@ -28,6 +28,9 @@ import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './token.interceptor';
 import { UserPageComponent } from './user-page/user-page.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { PostPostComponent } from './post-post/post-post.component';
+import { MatOptionModule } from '@angular/material/core';
+import { PostPostPageComponent } from './post-post-page/post-post-page.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     LoginComponent,
     UserPageComponent,
     UserInfoComponent,
+    PostPostComponent,
+    PostPostPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     MatListModule,
     MatButtonModule,
     FormsModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [
     [

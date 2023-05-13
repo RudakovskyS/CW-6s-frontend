@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="topic-selectors">
+        <mat-form-field>
+            <mat-label>Катэгорыя</mat-label>
+            <mat-select [(ngModel)]="selectedCategory" name="selectedCategory">
+              <mat-option *ngFor="let category of categories" [value]="category">{{ category.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field *ngIf="selectedCategory != null">
+              <mat-label>Топік</mat-label>
+              <mat-select [(ngModel)]="selectedTopic" name="selectedTopic">
+                <mat-option *ngFor="let topic of selectedCategory.topics" [value]="topic">{{ topic.name }}</mat-option>
+              </mat-select>
+          </mat-form-field>
+    </div>
+    
+    <div class="inputs">
+        <mat-form-field>
+            <input matInput placeholder="Загаловак артыкула" [(ngModel)]="postTitle" name="postTitle"/>
+        </mat-form-field>
+    
+        <mat-form-field>
+          <textarea matInput placeholder="Напішы артыкул" [(ngModel)]="postContent" name="postContent"></textarea>
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="submitPost()">Даслаць</button>
+</div>

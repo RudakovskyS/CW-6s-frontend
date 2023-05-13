@@ -32,6 +32,10 @@ export class CategoryListComponent implements OnInit{
   redirectToQuizPage(){}
 
   redirectToUserPage(){}
+  
+  redirectToPostPostingPage(){
+    this.router.navigate(['post']);
+  }
 
   redirectToLoginPage(){
     this.router.navigate(['auth']);
