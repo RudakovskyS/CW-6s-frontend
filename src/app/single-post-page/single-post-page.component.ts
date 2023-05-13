@@ -21,12 +21,15 @@ export class SinglePostPageComponent implements OnInit{
   }
 
   async likePost(id: number){
-    console.log(id);
-    this.postService.likePost(id)
+    this.postService.likePost(id).subscribe(data =>{
+      this.ngOnInit()
+    })
   }
 
   async dislikePost(id: number){
-    this.postService.dislikePost(id)
+    this.postService.dislikePost(id).subscribe(data =>{
+      this.ngOnInit()
+    })
   }
 
   post!: Post;
