@@ -4,7 +4,11 @@
           <mat-icon svgIcon="logo"/>Спадарожнік
     </mat-card>
   </button>
-  
+
+  <button (click)="redirectToUserPage()">
+    <mat-card class="logo">
+    </mat-card>
+  </button>
   <mat-expansion-panel hideToggle *ngFor="let category of categories">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -20,10 +24,19 @@
         
        </mat-list>
   </mat-expansion-panel>
+  <button (click)="redirectToDictionaryPage()">
     <mat-card class="separated">
       Тлумачальны слоўнік
     </mat-card>
+  </button>
+  <button (click)="redirectToQuizPage()">
     <mat-card class="separated">
       Правер сабе!
     </mat-card>
+  </button>
+  <button (click)="logout()" *ngIf="isLoggedIn">
+    <mat-card class="separated">
+      Выйсці
+    </mat-card>
+  </button>
 </div>

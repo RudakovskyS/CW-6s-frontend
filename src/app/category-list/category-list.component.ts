@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryListService } from '../services/category-list.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 interface Category {
   name: string;
@@ -19,12 +20,13 @@ interface Topic{
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit{
-  constructor(private categoryListService: CategoryListService, private router: Router){}
+  constructor(private categoryListService: CategoryListService, private router: Router, private authService: AuthService){}
 
   ngOnInit(): void {
     this.categoryListService.getCategories().subscribe((data: Category[]) => {
       this.categories = data;
     })
+     this.isLoggedIn = this.authService.isLoggedIn();
   }
   
   redirectToTopicPage(topic_id: number){
@@ -35,5 +37,16 @@ export class CategoryListComponent implements OnInit{
     this.router.navigate([``]);
   }
 
+  redirectToDictionaryPage(){}
+
+  redirectToQuizPage(){}
+
+  redirectToUserPage(){}
+
+  logout(){
+    this.authService.logout()
+    this.ngOnInit();
+  }
+  isLoggedIn?: boolean
   categories?: Category[] 
 }
