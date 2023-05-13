@@ -1,17 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentSectionService } from '../services/comment-section.service';
 import { ActivatedRoute } from '@angular/router';
-
-interface Comment {
-  content: string;
-  date_created: Date
-  user: User
-}
-
-interface User {
-  username: string
-}
-
+import { Comment } from '../dto/comment.dto';
 @Component({
   selector: 'app-comment-section',
   templateUrl: './comment-section.component.html',

@@ -1,38 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
-interface Post{
-  post_id: number;
-  title: string;
-  content: string;
-  date_created: Date;
-  user: User
-  topic: Topic
-  likes: Like[]
-  dislikes: Dislike[]
-  comments: Comment[]
-}
-
-interface Comment{
-  content: string
-}
-
-interface Like{
-  userUser_id: number,
-}
-interface Dislike{
-  userUser_id: number,
-}
-interface User{
-  user_id: number
-  username: string
-}
-
-interface Topic{
-  topic_id: number,
-  name: string
-}
+import { Post } from '../dto/post.dto';
 
 @Component({
   selector: 'app-posts',
@@ -45,6 +14,7 @@ export class PostsComponent implements OnInit{
   ngOnInit(): void {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
     let id = 0;
+
     if(url === ''){
       this.postService.getAllPosts().subscribe((data: Post[]) =>
       this.posts = data)
@@ -80,5 +50,5 @@ export class PostsComponent implements OnInit{
     })
   }
 
-  posts?: Post[]
+  posts?: Post[];
 }

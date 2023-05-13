@@ -2,17 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryListService } from '../services/category-list.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-
-interface Category {
-  name: string;
-  isSelected: boolean;
-  topics: Topic[];
-}
-
-interface Topic{
-  topic_id: number;
-  name: string;
-}
+import { Category } from '../dto/category.dto';
 
 @Component({
   selector: 'app-category-list',
