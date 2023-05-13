@@ -43,6 +43,10 @@ export class CategoryListComponent implements OnInit{
 
   redirectToUserPage(){}
 
+  redirectToLoginPage(){
+    this.router.navigate(['auth']);
+  }
+
   logout(){
     this.authService.logout()
     this.ngOnInit();

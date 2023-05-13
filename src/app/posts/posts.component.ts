@@ -25,6 +25,7 @@ interface Dislike{
   userUser_id: number,
 }
 interface User{
+  user_id: number
   username: string
 }
 
@@ -51,6 +52,12 @@ export class PostsComponent implements OnInit{
       this.route.params.subscribe(params => {
         id = params['id']
         this.postService.getTopicPosts(id).subscribe((data: Post[]) =>
+        this.posts = data)
+      })
+    } else if (url.startsWith('user/')){
+      this.route.params.subscribe(params => {
+        id = params['id']
+        this.postService.getUserPosts(id).subscribe((data: Post[]) =>
         this.posts = data)
       })
     }

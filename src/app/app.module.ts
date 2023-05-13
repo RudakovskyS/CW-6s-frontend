@@ -26,6 +26,8 @@ import { TopicComponent } from './topic/topic.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { TokenInterceptor } from './token.interceptor';
+import { UserPageComponent } from './user-page/user-page.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { TokenInterceptor } from './token.interceptor';
     TopicComponent,
     RegisterComponent,
     LoginComponent,
+    UserPageComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,

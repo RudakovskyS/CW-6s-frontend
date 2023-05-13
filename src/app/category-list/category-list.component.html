@@ -5,8 +5,14 @@
     </mat-card>
   </button>
 
-  <button (click)="redirectToUserPage()">
-    <mat-card class="logo">
+  <button (click)="redirectToLoginPage()" *ngIf="!isLoggedIn">
+    <mat-card class="separated">
+      Увайсці
+    </mat-card>
+  </button>
+  <button (click)="redirectToUserPage()" *ngIf="isLoggedIn">
+    <mat-card class="separated">
+      username
     </mat-card>
   </button>
   <mat-expansion-panel hideToggle *ngFor="let category of categories">
@@ -29,7 +35,7 @@
       Тлумачальны слоўнік
     </mat-card>
   </button>
-  <button (click)="redirectToQuizPage()">
+  <button (click)="redirectToQuizPage()" *ngIf="isLoggedIn">
     <mat-card class="separated">
       Правер сабе!
     </mat-card>

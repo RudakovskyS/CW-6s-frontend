@@ -12,7 +12,7 @@
     </mat-card-content>
     <mat-card-footer>
         <div>
-            Напісана карыстальнікам {{post.user.username}}
+            Напісана карыстальнікам <a href="user/{{post.user.user_id}}">{{post.user.username}}</a>
         </div>
         <div>
             {{post.date_created}}

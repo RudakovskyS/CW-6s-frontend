@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
+  getUserPosts(user_id: number) : Observable<any> {
+    return this.http.get(`http://localhost:3000/api/posts/user/${user_id}`)
+  }
 
   constructor(private http: HttpClient) { }
 
