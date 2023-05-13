@@ -32,6 +32,7 @@ import { PostPostComponent } from './post-post/post-post.component';
 import { MatOptionModule } from '@angular/material/core';
 import { PostPostPageComponent } from './post-post-page/post-post-page.component';
 import { NoContentPageComponent } from './no-content-page/no-content-page.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { NoContentPageComponent } from './no-content-page/no-content-page.compon
     PostPostComponent,
     PostPostPageComponent,
     NoContentPageComponent,
+    DictionaryComponent,
   ],
   imports: [
     BrowserModule,

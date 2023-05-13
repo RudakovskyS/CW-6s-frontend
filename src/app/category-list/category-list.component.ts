@@ -28,7 +28,9 @@ export class CategoryListComponent implements OnInit{
     this.router.navigate([``]);
   }
 
-  redirectToDictionaryPage(){}
+  redirectToDictionaryPage(){
+    this.router.navigate([`dictionary`]);
+  }
 
   redirectToQuizPage(){}
 

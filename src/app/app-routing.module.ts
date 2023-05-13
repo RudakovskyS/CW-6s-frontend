@@ -6,6 +6,7 @@ import { SinglePostPageComponent } from './single-post-page/single-post-page.com
 import { TopicComponent } from './topic/topic.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { PostPostPageComponent } from './post-post-page/post-post-page.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 const routes: Routes = [
 	{path: '', component: HomeComponent},
@@ -13,8 +14,8 @@ const routes: Routes = [
 	{path: 'post/:id', component: SinglePostPageComponent},
 	{path: 'post', component: PostPostPageComponent},
 	{path: 'topic/:id', component: TopicComponent},
-	{path: 'user/:id', component: UserPageComponent}
-
+	{path: 'user/:id', component: UserPageComponent},
+	{path: 'dictionary', component: DictionaryComponent},
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],

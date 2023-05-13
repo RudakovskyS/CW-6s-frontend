@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-card>
+        <button mat-button (click)="redirectToHomePage()" class="redirect">На галоўную</button>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="word" placeholder="Напішыце слова" />
+        </mat-form-field>
+        <button mat-button (click)="sendWord(word)">Даслаць</button>
+        <div *ngFor="let def of definitions" class="definition">
+        - {{ def }}
+        </div>
+    </mat-card>
+</div>
+
+    

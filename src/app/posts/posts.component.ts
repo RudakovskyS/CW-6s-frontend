@@ -40,19 +40,19 @@ export class PostsComponent implements OnInit{
   }
 
   likePost(id: number){
-    this.postService.likePost(id).subscribe(data =>{
+    this.postService.likePost(id).subscribe(() =>{
       this.ngOnInit()
     })
   }
 
   dislikePost(id: number){
-    this.postService.dislikePost(id).subscribe(data =>{
+    this.postService.dislikePost(id).subscribe(() =>{
       this.ngOnInit()
     })
   }
 
   deletePost(id: number){
-    this.postService.deletePost(id).subscribe(data =>{
+    this.postService.deletePost(id).subscribe(() =>{
       this.ngOnInit()
     })
   }
