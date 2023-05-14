@@ -1,20 +1,15 @@
 <div class="container">
     <mat-card>
         <button mat-button (click)="redirectToHomePage()" class="redirect">На галоўную</button>
-        <mat-form-field>
-            <mat-label for="question">Пытанне:</mat-label>
-            <input matInput type="text" id="question" [(ngModel)]="payload.question" required>
-        </mat-form-field>
-    
-        <div>Адказы (першы – правільны):</div>
-        <div *ngFor="let answer of answers; let i = index" class="answer">
-        <mat-form-field class="answer-text">
-            <input matInput type="text" [(ngModel)]="answer.text" required>
-        </mat-form-field>
-        <button mat-button (click)="removeAnswer(i)" *ngIf="answers.length > 1">Выдаліць</button>
+        <mat-card-title>{{randomQuestion.content}}</mat-card-title>
+        <div *ngFor="let answer of randomQuestion.answers">
+            <button mat-button (click)="checkAnswer(randomQuestion, answer)" *ngIf="!isAnswered">
+                {{answer.content}}
+            </button>
+            <button mat-button disabled="true" *ngIf="isAnswered" [ngClass]="{ 'green': answer.isCorrect, 'red': !answer.isCorrect }">
+                {{answer.content}}
+            </button>
         </div>
-        <button mat-button (click)="addAnswer()">Дадаць пытанне</button>
-        <button mat-button (click)="saveQuestion()">Захаваць пытанне</button>
-    
+        <button mat-button (click)="nextQuestion()" *ngIf="isAnswered">Наступнае пытанне</button>
     </mat-card>
 </div>

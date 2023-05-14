@@ -34,6 +34,7 @@ import { PostPostPageComponent } from './post-post-page/post-post-page.component
 import { NoContentPageComponent } from './no-content-page/no-content-page.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
+import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { QuizPageComponent } from './quiz-page/quiz-page.component';
     NoContentPageComponent,
     DictionaryComponent,
     QuizPageComponent,
+    CreateQuizComponent,
   ],
   imports: [
     BrowserModule,

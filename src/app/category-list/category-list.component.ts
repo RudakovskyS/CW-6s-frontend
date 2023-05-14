@@ -32,7 +32,13 @@ export class CategoryListComponent implements OnInit{
     this.router.navigate([`dictionary`]);
   }
 
-  redirectToQuizPage(){}
+  redirectToQuizPage(){
+    this.router.navigate([`quiz`]);
+  }
+
+  redirectToCreateQuizPage(){
+    this.router.navigate([`quiz/create`]);
+  }
 
   redirectToUserPage(){
     this.router.navigate([`/user/${this.currentUser?.user_id}`]);

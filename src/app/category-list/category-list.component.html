@@ -45,6 +45,11 @@
       Правер сабе!
     </mat-card>
   </button>
+  <button (click)="redirectToCreateQuizPage()" *ngIf="isLoggedIn && currentUser.isAdmin">
+    <mat-card class="separated">
+      Саздаць новае пытанне!
+    </mat-card>
+  </button>
   <button (click)="logout()" *ngIf="isLoggedIn">
     <mat-card class="separated">
       Выйсці

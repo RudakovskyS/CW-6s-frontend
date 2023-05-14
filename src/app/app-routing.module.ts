@@ -7,6 +7,7 @@ import { TopicComponent } from './topic/topic.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { PostPostPageComponent } from './post-post-page/post-post-page.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
+import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 	{path: 'topic/:id', component: TopicComponent},
 	{path: 'user/:id', component: UserPageComponent},
 	{path: 'dictionary', component: DictionaryComponent},
+	{path: 'quiz/create', component: CreateQuizComponent},
 	{path: 'quiz', component: QuizPageComponent}
 ];
 @NgModule({
