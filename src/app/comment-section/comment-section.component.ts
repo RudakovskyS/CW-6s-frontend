@@ -9,27 +9,27 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./comment-section.component.css']
 })
 export class CommentSectionComponent implements OnInit {
-  constructor(private commentService: CommentSectionService, private route: ActivatedRoute, private authService: AuthService) {}
+  constructor(private commentService: CommentSectionService, private route: ActivatedRoute, private authService: AuthService) { }
   id = 0;
-  
+
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.route.params.subscribe(params => {
       this.id = params['id']
     });
     this.commentService.getCommentsForPost(this.id).subscribe((data: Comment[]) =>
-    this.comments = data)
+      this.comments = data)
     this.currentUser = this.authService.getCurrentUser()
   }
 
-  sendComment(){
+  sendComment() {
     this.commentService.sendComment(this.commentContent, this.id).subscribe(() => {
       this.commentContent = ''
       this.ngOnInit()
     })
   }
 
-  deleteComment(id: number){
+  deleteComment(id: number) {
     this.commentService.deleteComment(id).subscribe(() => {
       this.ngOnInit()
     })

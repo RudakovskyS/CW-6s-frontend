@@ -1,10 +1,10 @@
-mat-card{
+mat-card {
     background-color: rgb(188, 188, 188);
     border: 1px solid black;
     margin-bottom: 10px;
 }
 
-mat-card-header{
+mat-card-header {
     border: 1px solid rgb(205, 205, 205);
     margin: 15px;
     padding: 10px;
@@ -12,28 +12,28 @@ mat-card-header{
     text-align: justify;
 }
 
-div{
+div {
     width: 100%;
     flex-direction: column;
 }
 
-mat-form-field{
+mat-form-field {
     width: fit-content;
     width: 95%;
     padding: 0 10px;
     margin: 0;
 }
 
-button{
+button {
     border: 1px solid rgb(172, 172, 172);
     margin-left: 10px;
 }
 
-.trash{
+.trash {
     color: rgb(202, 44, 44);
 }
 
-button.trash{
+button.trash {
     border: rgb(147, 50, 50) 1px solid;
     color: rgb(148, 40, 40);
 }

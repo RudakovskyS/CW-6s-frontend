@@ -14,7 +14,7 @@ export class AddHierarchyComponent implements OnInit {
   ngOnInit(): void {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
     console.log(url);
-    
+
     if (url === 'category/add') {
       this.isCategoryPage = true
     } else {

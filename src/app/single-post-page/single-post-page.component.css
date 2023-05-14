@@ -1,4 +1,4 @@
-mat-card-content{
+mat-card-content {
     border: 1px solid rgb(205, 205, 205);
     margin: 15px;
     padding: 10px;
@@ -6,35 +6,35 @@ mat-card-content{
     text-align: justify;
 }
 
-mat-card-footer{
+mat-card-footer {
     color: grey;
     margin-left: 10px;
 }
 
-mat-card{
+mat-card {
     width: 100%;
     border-top: 1px solid black;
 }
 
-app-category-list{
+app-category-list {
     border-top: 1px solid black;
 }
 
-mat-card-actions{
+mat-card-actions {
     margin-top: 10px;
 }
 
-.container{
+.container {
     display: flex;
     height: 100%;
     background-image: url('../../assets/bgHomeTexture.svg');
 }
 
-a:visited{
+a:visited {
     color: grey;
 }
 
 
-a{
+a {
     color: grey;
 }

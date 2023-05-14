@@ -7,15 +7,15 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   constructor(private http: HttpClient) { }
 
-  sendCredentials(username: string, password: string){
-    return this.http.post("http://localhost:3000/api/auth/login", {username: username, password: password})
+  sendCredentials(username: string, password: string) {
+    return this.http.post("http://localhost:3000/api/auth/login", { username: username, password: password })
   }
 
-  registerUser(username: string, password: string){
-    return this.http.post("http://localhost:3000/api/auth/signup", {username: username, password: password})
+  registerUser(username: string, password: string) {
+    return this.http.post("http://localhost:3000/api/auth/signup", { username: username, password: password })
   }
 
-  getToken(){
+  getToken() {
     return window.sessionStorage.getItem('access_token');
   }
 
@@ -23,24 +23,24 @@ export class AuthService {
     return this.getToken() != null;
   }
 
-  getCurrentUser(){
+  getCurrentUser() {
     const jwtToken = this.getToken();
     if (!jwtToken)
-    return 
+      return
     const tokenParts = jwtToken!.split('.');
     const encodedPayload = tokenParts[1];
     const decodedPayload = atob(encodedPayload);
     const payload = JSON.parse(decodedPayload);
-    return {user_id: payload.sub, username: payload.username, isAdmin: payload.isAdmin}
+    return { user_id: payload.sub, username: payload.username, isAdmin: payload.isAdmin }
   }
 
-  isAdmin(): boolean{
-    if (window.sessionStorage.getItem('isAdmin') == 'true') 
+  isAdmin(): boolean {
+    if (window.sessionStorage.getItem('isAdmin') == 'true')
       return true
     return false;
   }
 
-  logout(){
+  logout() {
     window.sessionStorage.clear();
   }
 }

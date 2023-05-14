@@ -10,8 +10,8 @@ import { User } from '../dto/user.dto';
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.css']
 })
-export class UserInfoComponent implements OnInit{
-  constructor(private userService: UserService, private route: ActivatedRoute){}
+export class UserInfoComponent implements OnInit {
+  constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
@@ -21,7 +21,7 @@ export class UserInfoComponent implements OnInit{
       this.route.params.subscribe(params => {
         id = params['id']
         this.userService.getUserPosts(id).subscribe((data: User) =>
-        this.user = data)
+          this.user = data)
       })
     }
   }

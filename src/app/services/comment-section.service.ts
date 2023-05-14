@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CommentSectionService {
-  
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   sendComment(commentContent: string, id: number) {
-    return this.http.post(`http://localhost:3000/api/comments/${id}`, {content: commentContent})
+    return this.http.post(`http://localhost:3000/api/comments/${id}`, { content: commentContent })
   }
-  getCommentsForPost(id: number) : Observable<any>{
+  getCommentsForPost(id: number): Observable<any> {
     return this.http.get(`http://localhost:3000/api/comments/post/${id}`)
   }
 

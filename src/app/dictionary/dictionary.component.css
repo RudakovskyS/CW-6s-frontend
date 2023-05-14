@@ -4,11 +4,11 @@
     background-image: url('../../assets/bgHomeTexture.svg');
 }
 
-.redirect{
+.redirect {
     margin-bottom: 20px;
 }
 
-mat-card{
+mat-card {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,7 +18,7 @@ mat-card{
     height: 550px;
     width: 600px;
 }
-  
+
 button {
     font-size: 16px;
 }

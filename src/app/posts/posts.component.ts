@@ -9,50 +9,50 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit{
+export class PostsComponent implements OnInit {
   constructor(private postService: PostsService, private router: Router,
-    private route: ActivatedRoute, private authService: AuthService){}
- 
+    private route: ActivatedRoute, private authService: AuthService) { }
+
   ngOnInit() {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
     let id = 0;
-    if(url === ''){
+    if (url === '') {
       this.postService.getAllPosts().subscribe((data: Post[]) =>
-      this.posts = data)
-    } else if(url.startsWith('topic/')){
+        this.posts = data)
+    } else if (url.startsWith('topic/')) {
       this.route.params.subscribe(params => {
         id = params['id']
         this.postService.getTopicPosts(id).subscribe((data: Post[]) =>
-        this.posts = data)
+          this.posts = data)
       })
-    } else if (url.startsWith('user/')){
+    } else if (url.startsWith('user/')) {
       this.route.params.subscribe(params => {
         id = params['id']
         this.postService.getUserPosts(id).subscribe((data: Post[]) =>
-        this.posts = data)
+          this.posts = data)
       })
     }
     this.currentUser = this.authService.getCurrentUser()
   }
 
-  redirectToPostPage(post_id: number){
+  redirectToPostPage(post_id: number) {
     this.router.navigate([`/post/${post_id}`]);
   }
 
-  likePost(id: number){
-    this.postService.likePost(id).subscribe(() =>{
+  likePost(id: number) {
+    this.postService.likePost(id).subscribe(() => {
       this.ngOnInit()
     })
   }
 
-  dislikePost(id: number){
-    this.postService.dislikePost(id).subscribe(() =>{
+  dislikePost(id: number) {
+    this.postService.dislikePost(id).subscribe(() => {
       this.ngOnInit()
     })
   }
 
-  deletePost(id: number){
-    this.postService.deletePost(id).subscribe(() =>{
+  deletePost(id: number) {
+    this.postService.deletePost(id).subscribe(() => {
       this.ngOnInit()
     })
   }

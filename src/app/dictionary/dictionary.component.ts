@@ -7,19 +7,19 @@ import { Router } from '@angular/router';
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.css']
 })
-export class DictionaryComponent{
+export class DictionaryComponent {
 
-  constructor(private dictionaryService: DictionaryService, private router: Router){}
+  constructor(private dictionaryService: DictionaryService, private router: Router) { }
 
-  sendWord(word: string){
+  sendWord(word: string) {
     this.dictionaryService.getDefinition(word).subscribe((data: any) => {
-       this.definitions = data.definitions.map((str: string) => {
+      this.definitions = data.definitions.map((str: string) => {
         return str.replace('&rsquo;', '\'');
       });
     })
   }
 
-  redirectToHomePage(){
+  redirectToHomePage() {
     this.router.navigate([``]);
   }
 

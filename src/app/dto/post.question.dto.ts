@@ -1,4 +1,4 @@
-export class PostingQuestionDto{
+export class PostingQuestionDto {
     question: string = ''
     answers: string[] = []
 }

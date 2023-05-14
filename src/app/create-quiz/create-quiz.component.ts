@@ -8,9 +8,9 @@ import { PostingQuestionDto } from '../dto/post.question.dto';
   templateUrl: './create-quiz.component.html',
   styleUrls: ['./create-quiz.component.css']
 })
-export class CreateQuizComponent  implements OnInit{
-  constructor(private router: Router, private quizService: QuizService){}
-  
+export class CreateQuizComponent implements OnInit {
+  constructor(private router: Router, private quizService: QuizService) { }
+
   ngOnInit(): void {
     this.payload.question = '';
     this.answers = [{ text: '' }];
@@ -29,15 +29,15 @@ export class CreateQuizComponent  implements OnInit{
     this.answers.map(answer => {
       this.payload.answers.push(answer.text)
     })
-    this.quizService.createQuestion(this.payload).subscribe(() =>{
+    this.quizService.createQuestion(this.payload).subscribe(() => {
       this.ngOnInit()
     })
   }
 
-  redirectToHomePage(){
+  redirectToHomePage() {
     this.router.navigate([``]);
   }
-  payload: PostingQuestionDto = {question: '', answers: []}
+  payload: PostingQuestionDto = { question: '', answers: [] }
 }
 
 interface Answer {

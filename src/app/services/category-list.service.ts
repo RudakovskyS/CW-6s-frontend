@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryListService {
-  
+
   constructor(private http: HttpClient) { }
 
-  getCategories() : Observable<any>{
+  getCategories(): Observable<any> {
     return this.http.get('http://localhost:3000/api/categories')
   }
 }

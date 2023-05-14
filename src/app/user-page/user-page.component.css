@@ -1,26 +1,26 @@
-app-category-list{
+app-category-list {
     border-top: 1px solid black;
     background-color: rgb(237, 237, 238);
 }
 
-app-user-info{
+app-user-info {
     display: column;
     flex-direction: row;
 }
 
-app-posts{
+app-posts {
     display: flex;
     flex-direction: column;
     margin-left: 2px;
     width: 100%;
 }
 
-div{
+div {
     display: flex;
     width: 100%;
 }
 
-.user-container{
+.user-container {
     display: flex;
     flex-direction: column;
 }

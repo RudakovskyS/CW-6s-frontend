@@ -8,8 +8,8 @@ import { Post } from '../dto/post.dto';
   templateUrl: './single-post-page.component.html',
   styleUrls: ['./single-post-page.component.css']
 })
-export class SinglePostPageComponent implements OnInit{
-  constructor(private postService: PostsService, private route: ActivatedRoute){}
+export class SinglePostPageComponent implements OnInit {
+  constructor(private postService: PostsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     var id = 0;
@@ -17,17 +17,17 @@ export class SinglePostPageComponent implements OnInit{
       id = params['id']
     });
     this.postService.getPost(id).subscribe((data: Post) =>
-    this.post = data)
+      this.post = data)
   }
 
-  async likePost(id: number){
-    this.postService.likePost(id).subscribe(data =>{
+  async likePost(id: number) {
+    this.postService.likePost(id).subscribe(data => {
       this.ngOnInit()
     })
   }
 
-  async dislikePost(id: number){
-    this.postService.dislikePost(id).subscribe(data =>{
+  async dislikePost(id: number) {
+    this.postService.dislikePost(id).subscribe(data => {
       this.ngOnInit()
     })
   }

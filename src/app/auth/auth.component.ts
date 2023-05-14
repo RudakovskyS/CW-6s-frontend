@@ -12,10 +12,10 @@ export class AuthComponent implements OnInit {
     this.isLogin = true
     this.buttonText = 'НЯМА АКАУНТУ? РЭГІСТРУЙСЯ!'
   }
-    isLogin!: boolean
-    buttonText!: string
-    changeMode(){
-      this.isLogin =!this.isLogin
-      this.isLogin ? this.buttonText = 'НЯМА АКАУНТУ? РЭГІСТРУЙСЯ!' : this.buttonText = 'ЁСЦЬ АКАУНТ?'
-    }
+  isLogin!: boolean
+  buttonText!: string
+  changeMode() {
+    this.isLogin = !this.isLogin
+    this.isLogin ? this.buttonText = 'НЯМА АКАУНТУ? РЭГІСТРУЙСЯ!' : this.buttonText = 'ЁСЦЬ АКАУНТ?'
+  }
 }

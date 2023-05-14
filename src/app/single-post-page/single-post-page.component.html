@@ -1,16 +1,16 @@
 <div class="container">
-<app-category-list></app-category-list>
+    <app-category-list></app-category-list>
     <mat-card>
         <mat-card-header>
-          <mat-card-title>{{post.title}}</mat-card-title>
-          <mat-card-subtitle>
-            з топіка <a href="topic/{{post.topic.topic_id}}">{{post.topic.name}}</a>
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-subtitle>
+                з топіка <a href="topic/{{post.topic.topic_id}}">{{post.topic.name}}</a>
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <p>
-            {{post.content}}
-          </p>
+            <p>
+                {{post.content}}
+            </p>
         </mat-card-content>
         <mat-card-footer>
             <div>
@@ -22,13 +22,13 @@
         </mat-card-footer>
         <mat-card-actions>
             <button mat-button (click)="likePost(post.post_id)">
-                <mat-icon svgIcon="thumbs-up"/>{{post.likes.length}}
+                <mat-icon svgIcon="thumbs-up" />{{post.likes.length}}
             </button>
             <button mat-button>
-                <mat-icon svgIcon="comment"/>{{post.comments.length}}
+                <mat-icon svgIcon="comment" />{{post.comments.length}}
             </button>
             <button mat-button (click)="dislikePost(post.post_id)">
-                <mat-icon svgIcon="thumbs-down"/>{{post.dislikes.length}}
+                <mat-icon svgIcon="thumbs-down" />{{post.dislikes.length}}
             </button>
         </mat-card-actions>
         <app-comment-section></app-comment-section>

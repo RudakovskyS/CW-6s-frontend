@@ -11,71 +11,71 @@ import { AddHierarchyService } from '../services/add-hierarchy.service';
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.css']
 })
-export class CategoryListComponent implements OnInit{
+export class CategoryListComponent implements OnInit {
   constructor(private categoryListService: CategoryListService, private router: Router, private authService: AuthService,
-              private hierarchyService: AddHierarchyService){}
+    private hierarchyService: AddHierarchyService) { }
 
   ngOnInit(): void {
     this.categoryListService.getCategories().subscribe((data: Category[]) => {
       this.categories = data;
     })
-     this.isLoggedIn = this.authService.isLoggedIn();
-     this.currentUser = this.authService.getCurrentUser();
-    }
-  
-  addTopic(category: Category){
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.currentUser = this.authService.getCurrentUser();
+  }
+
+  addTopic(category: Category) {
     this.router.navigate([`/category/${category.category_id}/topic/add`]);
   }
 
-  deleteCategory(category: Category){
+  deleteCategory(category: Category) {
     this.hierarchyService.deleteCategory(category.category_id).subscribe(() => {
       this.ngOnInit()
     })
   }
 
-  deleteTopic(topic: Topic){
+  deleteTopic(topic: Topic) {
     this.hierarchyService.deleteTopic(topic.topic_id).subscribe(() => {
       this.ngOnInit()
     })
   }
-  
-  addCategory(){
+
+  addCategory() {
     this.router.navigate([`/category/add`]);
   }
-    
-  redirectToTopicPage(topic_id: number){
+
+  redirectToTopicPage(topic_id: number) {
     this.router.navigate([`/topic/${topic_id}`]);
   }
 
-  redirectToHomePage(){
+  redirectToHomePage() {
     this.router.navigate([``]);
   }
 
-  redirectToDictionaryPage(){
+  redirectToDictionaryPage() {
     this.router.navigate([`dictionary`]);
   }
 
-  redirectToQuizPage(){
+  redirectToQuizPage() {
     this.router.navigate([`quiz`]);
   }
 
-  redirectToCreateQuizPage(){
+  redirectToCreateQuizPage() {
     this.router.navigate([`quiz/create`]);
   }
 
-  redirectToUserPage(){
+  redirectToUserPage() {
     this.router.navigate([`/user/${this.currentUser?.user_id}`]);
   }
-  
-  redirectToPostPostingPage(){
+
+  redirectToPostPostingPage() {
     this.router.navigate(['post']);
   }
 
-  redirectToLoginPage(){
+  redirectToLoginPage() {
     this.router.navigate(['auth']);
   }
 
-  logout(){
+  logout() {
     this.authService.logout()
     location.reload()
   }
@@ -84,5 +84,5 @@ export class CategoryListComponent implements OnInit{
   newTopic?: Topic;
   currentUser?: any
   isLoggedIn?: boolean
-  categories?: Category[] 
+  categories?: Category[]
 }

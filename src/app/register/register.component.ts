@@ -7,13 +7,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-      
-      constructor(private authService: AuthService){}
 
-  registerUser(){
-      this.authService.registerUser(this.username, this.password).subscribe()
-      this.username = ""
-      this.password = ""
+  constructor(private authService: AuthService) { }
+
+  registerUser() {
+    this.authService.registerUser(this.username, this.password).subscribe()
+    this.username = ""
+    this.password = ""
   }
 
   username!: string;

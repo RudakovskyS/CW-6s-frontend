@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   templateUrl: './post-post.component.html',
   styleUrls: ['./post-post.component.css']
 })
-export class PostPostComponent implements OnInit{
-  constructor(private postService: PostsService, private categoryListService: CategoryListService, private router: Router){}
+export class PostPostComponent implements OnInit {
+  constructor(private postService: PostsService, private categoryListService: CategoryListService, private router: Router) { }
 
   ngOnInit(): void {
     this.categoryListService.getCategories().subscribe((data: Category[]) => {
@@ -27,8 +27,8 @@ export class PostPostComponent implements OnInit{
 
   submitPost() {
     console.log(this.postTitle, this.postContent, this.selectedTopic.topic_id);
-    
-    this.postService.postPost(this.postTitle, this.postContent, this.selectedTopic.topic_id).subscribe(() =>{
+
+    this.postService.postPost(this.postTitle, this.postContent, this.selectedTopic.topic_id).subscribe(() => {
       this.router.navigate(['']);
     });
   }

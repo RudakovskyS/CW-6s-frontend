@@ -6,7 +6,8 @@
             <button mat-button (click)="checkAnswer(randomQuestion, answer)" *ngIf="!isAnswered">
                 {{answer.content}}
             </button>
-            <button mat-button disabled="true" *ngIf="isAnswered" [ngClass]="{ 'green': answer.isCorrect, 'red': !answer.isCorrect }">
+            <button mat-button disabled="true" *ngIf="isAnswered"
+                [ngClass]="{ 'green': answer.isCorrect, 'red': !answer.isCorrect }">
                 {{answer.content}}
             </button>
         </div>

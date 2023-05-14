@@ -12,17 +12,17 @@ import { QuizPageComponent } from './quiz-page/quiz-page.component';
 import { AddHierarchyComponent } from './add-hierarchy/add-hierarchy.component';
 
 const routes: Routes = [
-	{path: '', component: HomeComponent},
-	{path: 'auth', component: AuthComponent},
-	{path: 'post/:id', component: SinglePostPageComponent},
-	{path: 'post', component: PostPostPageComponent},
-	{path: 'topic/:id', component: TopicComponent},
-	{path: 'user/:id', component: UserPageComponent},
-	{path: 'dictionary', component: DictionaryComponent},
-	{path: 'quiz/create', component: CreateQuizComponent},
-	{path: 'quiz', component: QuizPageComponent},
-	{path: 'category/add', component: AddHierarchyComponent},
-	{path: 'category/:id/topic/add', component: AddHierarchyComponent},
+	{ path: '', component: HomeComponent },
+	{ path: 'auth', component: AuthComponent },
+	{ path: 'post/:id', component: SinglePostPageComponent },
+	{ path: 'post', component: PostPostPageComponent },
+	{ path: 'topic/:id', component: TopicComponent },
+	{ path: 'user/:id', component: UserPageComponent },
+	{ path: 'dictionary', component: DictionaryComponent },
+	{ path: 'quiz/create', component: CreateQuizComponent },
+	{ path: 'quiz', component: QuizPageComponent },
+	{ path: 'category/add', component: AddHierarchyComponent },
+	{ path: 'category/:id/topic/add', component: AddHierarchyComponent },
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],

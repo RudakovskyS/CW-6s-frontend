@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DictionaryService {
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) { }
 
-  getDefinition(word: string) : Observable<any>{
-    return this.http.post('http://localhost:3000/api/dictionary', {word: word})
+  getDefinition(word: string): Observable<any> {
+    return this.http.post('http://localhost:3000/api/dictionary', { word: word })
   }
 }

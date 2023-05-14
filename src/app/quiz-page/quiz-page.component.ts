@@ -9,9 +9,9 @@ import { Answer } from '../dto/answer.dto';
   templateUrl: './quiz-page.component.html',
   styleUrls: ['./quiz-page.component.css']
 })
-export class QuizPageComponent implements OnInit{
-  constructor(private router: Router, private quizService: QuizService ){}
-  
+export class QuizPageComponent implements OnInit {
+  constructor(private router: Router, private quizService: QuizService) { }
+
   ngOnInit(): void {
     this.quizService.getRandomQuestion().subscribe((data: Question) => {
       this.randomQuestion = data
@@ -19,20 +19,20 @@ export class QuizPageComponent implements OnInit{
     })
   }
 
-  checkAnswer(question: Question, answer: Answer){
+  checkAnswer(question: Question, answer: Answer) {
     this.quizService.checkAnswer(question, answer).subscribe((data: any) => {
       this.isAnswerCorrect = data.isCorrect
       this.isAnswered = true;
     })
     return false
   }
-  nextQuestion(){
+  nextQuestion() {
     location.reload()
   }
   isAnswered: boolean = false;
   isAnswerCorrect?: boolean;
   randomQuestion!: Question;
-  redirectToHomePage(){
+  redirectToHomePage() {
     this.router.navigate([``]);
   }
 }

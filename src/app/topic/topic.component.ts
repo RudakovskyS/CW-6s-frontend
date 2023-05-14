@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.css']
 })
-export class TopicComponent implements OnInit{
+export class TopicComponent implements OnInit {
   ngOnInit(): void {
   }
 

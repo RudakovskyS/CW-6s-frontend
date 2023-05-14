@@ -1,15 +1,15 @@
 <app-no-content-page *ngIf="posts.length == 0"></app-no-content-page>
 <mat-card *ngFor="let post of posts">
     <mat-card-header>
-      <mat-card-title>{{post.title}}</mat-card-title>
-      <mat-card-subtitle>
-        з топіка <a href="topic/{{post.topic.topic_id}}">{{post.topic.name}}</a>
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-subtitle>
+            з топіка <a href="topic/{{post.topic.topic_id}}">{{post.topic.name}}</a>
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        {{post.content}}
-      </p>
+        <p>
+            {{post.content}}
+        </p>
     </mat-card-content>
     <mat-card-footer>
         <div>
@@ -21,16 +21,17 @@
     </mat-card-footer>
     <mat-card-actions>
         <button mat-button (click)="likePost(post.post_id)">
-            <mat-icon svgIcon="thumbs-up"/>{{post.likes.length}}
+            <mat-icon svgIcon="thumbs-up" />{{post.likes.length}}
         </button>
         <button mat-button (click)="redirectToPostPage(post.post_id)">
-            <mat-icon svgIcon="comment"/>{{post.comments.length}}
+            <mat-icon svgIcon="comment" />{{post.comments.length}}
         </button>
         <button mat-button (click)="dislikePost(post.post_id)">
-            <mat-icon svgIcon="thumbs-down"/>{{post.dislikes.length}}
+            <mat-icon svgIcon="thumbs-down" />{{post.dislikes.length}}
         </button>
-        <button mat-button (click)="deletePost(post.post_id)" class="trash" *ngIf="currentUser?.isAdmin || currentUser?.user_id == post.user.user_id">
-            <mat-icon svgIcon="trash" class="trash"/>Выдаліць
+        <button mat-button (click)="deletePost(post.post_id)" class="trash"
+            *ngIf="currentUser?.isAdmin || currentUser?.user_id == post.user.user_id">
+            <mat-icon svgIcon="trash" class="trash" />Выдаліць
         </button>
     </mat-card-actions>
 </mat-card>

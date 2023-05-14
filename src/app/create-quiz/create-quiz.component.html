@@ -5,16 +5,16 @@
             <mat-label for="question">Пытанне:</mat-label>
             <input matInput type="text" id="question" [(ngModel)]="payload.question" required>
         </mat-form-field>
-    
+
         <div>Адказы (першы – правільны):</div>
         <div *ngFor="let answer of answers; let i = index" class="answer">
-        <mat-form-field class="answer-text">
-            <input matInput type="text" [(ngModel)]="answer.text" required>
-        </mat-form-field>
-        <button mat-button (click)="removeAnswer(i)" *ngIf="answers.length > 1">Выдаліць</button>
+            <mat-form-field class="answer-text">
+                <input matInput type="text" [(ngModel)]="answer.text" required>
+            </mat-form-field>
+            <button mat-button (click)="removeAnswer(i)" *ngIf="answers.length > 1">Выдаліць</button>
         </div>
         <button mat-button (click)="addAnswer()">Дадаць адказ</button>
         <button mat-button (click)="saveQuestion()">Захаваць пытанне</button>
-    
+
     </mat-card>
 </div>
