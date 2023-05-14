@@ -13,7 +13,9 @@ export class DictionaryComponent{
 
   sendWord(word: string){
     this.dictionaryService.getDefinition(word).subscribe((data: any) => {
-      this.definitions = data.definitions
+       this.definitions = data.definitions.map((str: string) => {
+        return str.replace('&rsquo;', '\'');
+      });
     })
   }
 
