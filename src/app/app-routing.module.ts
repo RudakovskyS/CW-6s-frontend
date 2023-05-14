@@ -9,6 +9,7 @@ import { PostPostPageComponent } from './post-post-page/post-post-page.component
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
+import { AddHierarchyComponent } from './add-hierarchy/add-hierarchy.component';
 
 const routes: Routes = [
 	{path: '', component: HomeComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
 	{path: 'user/:id', component: UserPageComponent},
 	{path: 'dictionary', component: DictionaryComponent},
 	{path: 'quiz/create', component: CreateQuizComponent},
-	{path: 'quiz', component: QuizPageComponent}
+	{path: 'quiz', component: QuizPageComponent},
+	{path: 'category/add', component: AddHierarchyComponent},
+	{path: 'category/:id/topic/add', component: AddHierarchyComponent},
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],

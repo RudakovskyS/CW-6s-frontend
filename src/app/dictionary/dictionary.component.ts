@@ -22,7 +22,7 @@ export class DictionaryComponent{
   redirectToHomePage(){
     this.router.navigate([``]);
   }
-  
+
   definitions!: string[]
   word!: string
 }

@@ -46,3 +46,14 @@ mat-panel-title{
   font-weight: 100;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.add-button{
+  background-color: rgb(149, 201, 231);
+  text-align: center;
+  border-top: rgba(77, 77, 78, 0.342) 1px solid;
+  border-bottom: rgba(77, 77, 78, 0.342) 1px solid;
+}
+
+.add-button mat-icon{
+  color: rgb(75, 138, 175);
+}

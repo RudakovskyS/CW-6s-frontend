@@ -1,0 +1,12 @@
+<div class="container">
+    <mat-card>
+        <button mat-button (click)="redirectToHomePage()" class="redirect">На галоўную</button>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="newElement" placeholder="Назва" />
+        </mat-form-field>
+        <button mat-button (click)="addCategory()" *ngIf="isCategoryPage">Дадаць</button>
+        <button mat-button (click)="addTopic()" *ngIf="!isCategoryPage">Дадаць</button>
+    </mat-card>
+</div>
+
+    

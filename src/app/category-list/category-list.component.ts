@@ -3,6 +3,7 @@ import { CategoryListService } from '../services/category-list.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Category } from '../dto/category.dto';
+import { Topic } from '../dto/topic.dto';
 
 @Component({
   selector: 'app-category-list',
@@ -20,6 +21,16 @@ export class CategoryListComponent implements OnInit{
      this.currentUser = this.authService.getCurrentUser();
     }
   
+  addTopic(category: Category){
+    console.log(category);
+    
+    this.router.navigate([`/category/${category.category_id}/topic/add`]);
+  }
+
+  addCategory(){
+    this.router.navigate([`/category/add`]);
+  }
+    
   redirectToTopicPage(topic_id: number){
     this.router.navigate([`/topic/${topic_id}`]);
   }
@@ -56,6 +67,9 @@ export class CategoryListComponent implements OnInit{
     this.authService.logout()
     location.reload()
   }
+
+  newCategory?: Category
+  newTopic?: Topic;
   currentUser?: any
   isLoggedIn?: boolean
   categories?: Category[] 

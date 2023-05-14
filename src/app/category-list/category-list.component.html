@@ -26,15 +26,24 @@
         {{category.name}}
       </mat-panel-title>
     </mat-expansion-panel-header>
-      <mat-list *ngFor="let topic of category.topics">
+
+      <mat-list *ngFor="let topic of category.topics; let i = index">
         <button (click)="redirectToTopicPage(topic.topic_id)">
           <mat-list-item>
             {{topic.name}}
           </mat-list-item>
         </button>
-        
+        <button mat-button (click)="addTopic(category)" *ngIf="i === category.topics.length - 1 && currentUser?.isAdmin" class="add-button">
+          <mat-icon svgIcon="add"/>
+        </button>
        </mat-list>
+       <button mat-button (click)="addTopic(category)" *ngIf="category.topics.length === 0 && currentUser?.isAdmin" class="add-button">
+          <mat-icon svgIcon="add"/>
+        </button>
   </mat-expansion-panel>
+  <button mat-button (click)="addCategory()" class="add-button" *ngIf="currentUser?.isAdmin">
+      <mat-icon svgIcon="add"/>
+  </button>
   <button (click)="redirectToDictionaryPage()">
     <mat-card class="separated">
       Тлумачальны слоўнік
@@ -45,7 +54,7 @@
       Правер сабе!
     </mat-card>
   </button>
-  <button (click)="redirectToCreateQuizPage()" *ngIf="isLoggedIn && currentUser.isAdmin">
+  <button (click)="redirectToCreateQuizPage()" *ngIf="currentUser?.isAdmin">
     <mat-card class="separated">
       Саздаць новае пытанне!
     </mat-card>

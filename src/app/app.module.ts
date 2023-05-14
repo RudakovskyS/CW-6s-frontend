@@ -35,6 +35,7 @@ import { NoContentPageComponent } from './no-content-page/no-content-page.compon
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
+import { AddHierarchyComponent } from './add-hierarchy/add-hierarchy.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CreateQuizComponent } from './create-quiz/create-quiz.component';
     DictionaryComponent,
     QuizPageComponent,
     CreateQuizComponent,
+    AddHierarchyComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,5 +95,6 @@ export class AppModule {
     this.matIconRegistry.addSvgIcon('comment', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/comment.svg'));
     this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/logo.svg'));
     this.matIconRegistry.addSvgIcon('trash', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/trash.svg'));
+    this.matIconRegistry.addSvgIcon('add', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/add.svg'));
   }
 }

@@ -1,0 +1,24 @@
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/bgHomeTexture.svg');
+}
+
+.redirect{
+    margin-bottom: 20px;
+}
+
+mat-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px 100px;
+    border-radius: 15px;
+    height: 550px;
+    width: 600px;
+}
+  
+button {
+    font-size: 16px;
+}
