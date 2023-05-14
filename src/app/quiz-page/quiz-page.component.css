@@ -1,0 +1,33 @@
+.answer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+  
+.answer-text {
+  margin-right: 8px;
+  width: 70%;
+}
+  
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/bgHomeTexture.svg');
+}
+
+.redirect{
+  margin-bottom: 20px;
+}
+
+mat-card{
+  position: relative;
+  padding: 50px 50px;
+  left: 30%;
+  border-radius: 15px;
+  height: fit-content;
+  width: 600px;
+}
+  
+button {
+  font-size: 16px;
+}

@@ -33,6 +33,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { PostPostPageComponent } from './post-post-page/post-post-page.component';
 import { NoContentPageComponent } from './no-content-page/no-content-page.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
+import { QuizPageComponent } from './quiz-page/quiz-page.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DictionaryComponent } from './dictionary/dictionary.component';
     PostPostPageComponent,
     NoContentPageComponent,
     DictionaryComponent,
+    QuizPageComponent,
   ],
   imports: [
     BrowserModule,
