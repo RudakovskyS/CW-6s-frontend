@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <button (click)="redirectToHomePage()">
     <mat-card class="logo">
           <mat-icon svgIcon="logo"/>Спадарожнік
@@ -25,14 +25,23 @@
       <mat-panel-title>
         {{category.name}}
       </mat-panel-title>
+      <button mat-button (click)="deleteCategory(category)" *ngIf="currentUser?.isAdmin" class="delete-button">
+        <mat-icon svgIcon="trash" class="delete-button-icon"/>
+      </button>
     </mat-expansion-panel-header>
 
       <mat-list *ngFor="let topic of category.topics; let i = index">
-        <button (click)="redirectToTopicPage(topic.topic_id)">
           <mat-list-item>
-            {{topic.name}}
-          </mat-list-item>
-        </button>
+            <div class="topic-tab">
+              <button (click)="redirectToTopicPage(topic.topic_id)" class="topic">
+                {{topic.name}}
+              </button>
+              <button mat-button (click)="deleteTopic(topic)" *ngIf="currentUser?.isAdmin" class="delete-button">
+                <mat-icon svgIcon="trash" class="delete-button-icon"/>
+              </button>
+            </div>
+        </mat-list-item>
+        
         <button mat-button (click)="addTopic(category)" *ngIf="i === category.topics.length - 1 && currentUser?.isAdmin" class="add-button">
           <mat-icon svgIcon="add"/>
         </button>

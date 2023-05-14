@@ -1,4 +1,4 @@
-div{
+.container{
   height: 100%;
     width: 100%;
     background-image: url('../../assets/bgHomeTexture.svg');
@@ -22,7 +22,7 @@ mat-list-item{
 }
 
 mat-panel-title{
-  font-size: larger;
+  font-size: 17px;
 }
 
 .separated{
@@ -56,4 +56,22 @@ mat-panel-title{
 
 .add-button mat-icon{
   color: rgb(75, 138, 175);
+}
+
+.topic-tab{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.delete-button-icon{
+  color: rgb(75, 138, 175);
+}
+
+.delete-button {
+  width: 50px;
+}
+
+.topic{
+  font-size: 17px;
 }

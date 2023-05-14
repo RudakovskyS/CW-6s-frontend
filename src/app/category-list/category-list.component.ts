@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Category } from '../dto/category.dto';
 import { Topic } from '../dto/topic.dto';
+import { AddHierarchyService } from '../services/add-hierarchy.service';
 
 @Component({
   selector: 'app-category-list',
@@ -11,7 +12,8 @@ import { Topic } from '../dto/topic.dto';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit{
-  constructor(private categoryListService: CategoryListService, private router: Router, private authService: AuthService){}
+  constructor(private categoryListService: CategoryListService, private router: Router, private authService: AuthService,
+              private hierarchyService: AddHierarchyService){}
 
   ngOnInit(): void {
     this.categoryListService.getCategories().subscribe((data: Category[]) => {
@@ -22,11 +24,21 @@ export class CategoryListComponent implements OnInit{
     }
   
   addTopic(category: Category){
-    console.log(category);
-    
     this.router.navigate([`/category/${category.category_id}/topic/add`]);
   }
 
+  deleteCategory(category: Category){
+    this.hierarchyService.deleteCategory(category.category_id).subscribe(() => {
+      this.ngOnInit()
+    })
+  }
+
+  deleteTopic(topic: Topic){
+    this.hierarchyService.deleteTopic(topic.topic_id).subscribe(() => {
+      this.ngOnInit()
+    })
+  }
+  
   addCategory(){
     this.router.navigate([`/category/add`]);
   }

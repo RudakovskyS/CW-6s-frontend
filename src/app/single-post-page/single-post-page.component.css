@@ -24,8 +24,9 @@ mat-card-actions{
     margin-top: 10px;
 }
 
-div{
+.container{
     display: flex;
+    height: 100%;
     background-image: url('../../assets/bgHomeTexture.svg');
 }
 
