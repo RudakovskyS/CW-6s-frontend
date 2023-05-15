@@ -36,6 +36,7 @@ import { DictionaryComponent } from './dictionary/dictionary.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { AddHierarchyComponent } from './add-hierarchy/add-hierarchy.component';
+import { NoAccessComponent } from './no-access/no-access.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AddHierarchyComponent } from './add-hierarchy/add-hierarchy.component';
     QuizPageComponent,
     CreateQuizComponent,
     AddHierarchyComponent,
+    NoAccessComponent,
   ],
   imports: [
     BrowserModule,

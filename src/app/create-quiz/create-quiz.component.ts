@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
 import { Router } from '@angular/router';
 import { PostingQuestionDto } from '../dto/post.question.dto';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-create-quiz',
@@ -9,9 +10,10 @@ import { PostingQuestionDto } from '../dto/post.question.dto';
   styleUrls: ['./create-quiz.component.css']
 })
 export class CreateQuizComponent implements OnInit {
-  constructor(private router: Router, private quizService: QuizService) { }
+  constructor(private router: Router, private quizService: QuizService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser()
     this.payload.question = '';
     this.answers = [{ text: '' }];
   }
@@ -38,6 +40,9 @@ export class CreateQuizComponent implements OnInit {
     this.router.navigate([``]);
   }
   payload: PostingQuestionDto = { question: '', answers: [] }
+  currentUser?: any;
+  isLoggedIn!: boolean;
+
 }
 
 interface Answer {

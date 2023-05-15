@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-card>
+    <mat-card *ngIf="currentUser?.isAdmin">
         <button mat-button (click)="redirectToHomePage()" class="redirect">На галоўную</button>
         <mat-form-field>
             <mat-label for="question">Пытанне:</mat-label>
@@ -15,6 +15,6 @@
         </div>
         <button mat-button (click)="addAnswer()">Дадаць адказ</button>
         <button mat-button (click)="saveQuestion()">Захаваць пытанне</button>
-
     </mat-card>
+    <app-no-access *ngIf="!currentUser?.isAdmin"></app-no-access>
 </div>

@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-card>
+    <mat-card *ngIf="currentUser?.isAdmin">
         <button mat-button (click)="redirectToHomePage()" class="redirect">На галоўную</button>
         <mat-form-field>
             <input matInput type="text" [(ngModel)]="newElement" placeholder="Назва" />
@@ -7,4 +7,5 @@
         <button mat-button (click)="addCategory()" *ngIf="isCategoryPage">Дадаць</button>
         <button mat-button (click)="addTopic()" *ngIf="!isCategoryPage">Дадаць</button>
     </mat-card>
+    <app-no-access *ngIf="!currentUser?.isAdmin"></app-no-access>
 </div>
