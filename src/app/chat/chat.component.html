@@ -1,0 +1,25 @@
+<div class="container">
+
+  <mat-card>
+    <button mat-button (click)="redirectToHomePage()" class="redirect">На галоўную</button>
+    <div class="input-form">
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="newMessage" placeholder="Напішы паведамленне...">
+      </mat-form-field>
+      <button mat-button (click)="sendMessage(currentUser.username, newMessage)" class="send-message-button">
+        <mat-icon svgIcon="message" class="send-message"/>
+      </button>
+    </div>
+  </mat-card>
+
+  <mat-card>
+    <div class="message">
+      <div *ngFor="let message of messages; let i = index">
+        <div class="message-username" *ngIf="messages[i - 1]?.username !== message?.username">{{message.username}}:</div>
+        <div class="message-text">{{message.message}}</div>
+      </div>
+    </div>
+  </mat-card>
+    
+  </div>
+  

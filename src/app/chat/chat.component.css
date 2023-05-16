@@ -1,0 +1,52 @@
+.container {
+    background-image: url('../../assets/bgHomeTexture.svg');
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    background-repeat: repeat;
+}
+
+.redirect {
+    margin-bottom: 20px;
+}
+
+mat-card {
+    padding: 100px 100px;
+    border-radius: 15px;
+    height: fit-content;
+    margin: 100px;
+    width: 600px;
+}
+
+button {
+    font-size: 16px;
+}
+
+.message {
+    border: 1px solid black;
+    padding: 50px;
+}
+
+.message-username {
+  color: rgb(120, 158, 180);
+  font-size: 21px;
+}
+
+.message-text {
+    font-size: 17px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+
+.send-message-button {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.send-message {
+  color: rgb(120, 158, 180);
+}

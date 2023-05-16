@@ -70,6 +70,11 @@
       Саздаць новае пытанне!
     </mat-card>
   </button>
+  <button (click)="redirectToChatPage()">
+    <mat-card class="separated">
+      Live Чат
+    </mat-card>
+  </button>
   <button (click)="logout()" *ngIf="isLoggedIn">
     <mat-card class="separated">
       Выйсці

@@ -59,6 +59,10 @@ export class CategoryListComponent implements OnInit {
     this.router.navigate([`quiz`]);
   }
 
+  redirectToChatPage() {
+    this.router.navigate([`chat`]);
+  }
+
   redirectToCreateQuizPage() {
     this.router.navigate([`quiz/create`]);
   }

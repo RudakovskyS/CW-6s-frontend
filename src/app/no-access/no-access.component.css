@@ -24,3 +24,7 @@
     height: fit-content;
     width: 600px;
   }
+
+  h1, p, button{
+    text-align: center;
+  }

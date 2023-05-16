@@ -10,6 +10,7 @@ import { DictionaryComponent } from './dictionary/dictionary.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
 import { AddHierarchyComponent } from './add-hierarchy/add-hierarchy.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
 	{ path: 'quiz', component: QuizPageComponent },
 	{ path: 'category/add', component: AddHierarchyComponent },
 	{ path: 'category/:id/topic/add', component: AddHierarchyComponent },
+	{ path: 'chat', component: ChatComponent }
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
