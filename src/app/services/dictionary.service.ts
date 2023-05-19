@@ -9,6 +9,6 @@ export class DictionaryService {
   constructor(private http: HttpClient) { }
 
   getDefinition(word: string): Observable<any> {
-    return this.http.post('http://localhost:3000/api/dictionary', { word: word })
+    return this.http.post('https://localhost:3000/api/dictionary', { word: word })
   }
 }

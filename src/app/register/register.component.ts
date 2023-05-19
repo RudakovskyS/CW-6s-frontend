@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -6,16 +6,31 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-
+export class RegisterComponent implements OnInit{
+  ngOnInit(): void {
+    this.errorMessage = ''
+    this.successMessage = ''
+  }
   constructor(private authService: AuthService) { }
 
   registerUser() {
-    this.authService.registerUser(this.username, this.password).subscribe()
-    this.username = ""
-    this.password = ""
+    try {
+      this.authService.registerUser(this.username, this.password).subscribe(data => {
+        this.username = ""
+        this.password = ""
+        this.successMessage = 'Паспяховая рэгістрацыя'
+
+      }, err => {
+        this.errorMessage = 'Памылка пад час рэгістрацыі'
+      })
+      
+    } catch (error) {
+    }
+    
   }
 
+  successMessage?: string;
+  errorMessage?: string;
   username!: string;
   password!: string;
 }

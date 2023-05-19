@@ -10,6 +10,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserPosts(id: number): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/users/${id}`)
+    return this.http.get(`https://localhost:3000/api/users/${id}`)
   }
 }

@@ -7,36 +7,36 @@ import { Observable } from 'rxjs';
 })
 export class PostsService {
   deletePost(post_id: number) {
-    return this.http.delete(`http://localhost:3000/api/posts/${post_id}`)
+    return this.http.delete(`https://localhost:3000/api/posts/${post_id}`)
   }
 
   getUserPosts(user_id: number): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/posts/user/${user_id}`)
+    return this.http.get(`https://localhost:3000/api/posts/user/${user_id}`)
   }
 
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<any> {
-    return this.http.get('http://localhost:3000/api/posts');
+    return this.http.get('https://localhost:3000/api/posts');
   }
 
   getPost(post_id: number): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/posts/${post_id}`)
+    return this.http.get(`https://localhost:3000/api/posts/${post_id}`)
   }
 
   getTopicPosts(topic_id: number): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/posts/topic/${topic_id}`)
+    return this.http.get(`https://localhost:3000/api/posts/topic/${topic_id}`)
   }
 
   likePost(id: number) {
-    return this.http.post(`http://localhost:3000/api/posts/${id}/like`, {});
+    return this.http.post(`https://localhost:3000/api/posts/${id}/like`, {});
   }
 
   dislikePost(id: number) {
-    return this.http.post(`http://localhost:3000/api/posts/${id}/dislike`, {});
+    return this.http.post(`https://localhost:3000/api/posts/${id}/dislike`, {});
   }
 
   postPost(title: string, content: string, topic_id: number) {
-    return this.http.post('http://localhost:3000/api/posts', { title: title, content: content, topic_id: topic_id })
+    return this.http.post('https://localhost:3000/api/posts', { title: title, content: content, topic_id: topic_id })
   }
 }

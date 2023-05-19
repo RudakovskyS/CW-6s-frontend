@@ -27,11 +27,11 @@ mat-card-title {
 }
 
 .green {
-  background-color: green;
+  background-color: rgba(126, 217, 126, 0.574);
 }
 
 .red {
-  background-color: red;
+  background-color: rgba(246, 143, 143, 0.608);
 }
 
 .after-answer {

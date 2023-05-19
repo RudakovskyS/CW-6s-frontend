@@ -1,7 +1,7 @@
 .container {
     background-image: url('../../assets/bgHomeTexture.svg');
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 100%;
     background-repeat: repeat;
 }
@@ -11,11 +11,12 @@
 }
 
 mat-card {
-    padding: 100px 100px;
     border-radius: 15px;
     height: fit-content;
-    margin: 100px;
-    width: 600px;
+    margin-top: 40px;
+    left: 500px;
+    width: 500px;
+    padding: 10px;
 }
 
 button {
@@ -23,23 +24,32 @@ button {
 }
 
 .message {
-    border: 1px solid black;
-    padding: 50px;
-}
-
+    height: calc(100vh - 260px);
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden; /* Added property */
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+  
 .message-username {
   color: rgb(120, 158, 180);
   font-size: 21px;
+  text-align: center;
 }
 
 .message-text {
     font-size: 17px;
+    padding: 5px;
+    margin: 10px 0;
+    word-wrap: break-word;
 }
 
 .input-form {
     display: flex;
     flex-direction: row;
-    margin-left: 50px;
+    margin-top: 10px;
+    justify-content: center;
 }
 
 .send-message-button {
@@ -49,4 +59,18 @@ button {
 
 .send-message {
   color: rgb(120, 158, 180);
+}
+
+.his {
+    display: flex;
+    background-color: rgba(120, 158, 180, 0.51);
+    justify-content: end;
+    border-radius: 10px;
+}
+
+.their {
+    justify-content: start;
+    display: flex;
+    border-radius: 10px;
+    background-color: #f1f1f1;
 }

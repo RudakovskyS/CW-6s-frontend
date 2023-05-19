@@ -24,3 +24,7 @@ div {
     display: flex;
     flex-direction: column;
 }
+
+.container {
+    min-height: 100%;
+}

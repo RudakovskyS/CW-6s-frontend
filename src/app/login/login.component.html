@@ -1,11 +1,12 @@
 <form>
   <mat-form-field>
     <mat-label>Username</mat-label>
-    <input matInput [(ngModel)]="username" name="username">
+    <input matInput [(ngModel)]="username" name="username" required>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Password</mat-label>
-    <input matInput type="password" [(ngModel)]="password" name="password">
+    <input matInput type="password" [(ngModel)]="password" name="password" required>
   </mat-form-field>
+  <div style="color: red; text-align: center;">{{errorMessage}}</div>
   <button mat-button (click)="checkCredentials()">УВАЙСЦІ</button>
 </form>

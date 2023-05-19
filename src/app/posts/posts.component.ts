@@ -3,6 +3,7 @@ import { PostsService } from '../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../dto/post.dto';
 import { AuthService } from '../services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-posts',
@@ -11,7 +12,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class PostsComponent implements OnInit {
   constructor(private postService: PostsService, private router: Router,
-    private route: ActivatedRoute, private authService: AuthService) { }
+    private route: ActivatedRoute, private authService: AuthService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     const url = this.route.snapshot.url.map(segment => segment.path).join('/');
@@ -42,12 +43,16 @@ export class PostsComponent implements OnInit {
   likePost(id: number) {
     this.postService.likePost(id).subscribe(() => {
       this.ngOnInit()
+    }, () => {
+      this._snackBar.open("Вы не вайшлі ў акаўнт", 'Зразумела');
     })
   }
 
   dislikePost(id: number) {
     this.postService.dislikePost(id).subscribe(() => {
       this.ngOnInit()
+    }, () => {
+      this._snackBar.open("Вы не вайшлі ў акаўнт", 'Зразумела');
     })
   }
 

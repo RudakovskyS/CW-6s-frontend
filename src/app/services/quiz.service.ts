@@ -14,15 +14,15 @@ export class QuizService {
   constructor(private http: HttpClient) { }
 
   createQuestion(payload: PostingQuestionDto) {
-    return this.http.post('http://localhost:3000/api/quiz', payload);
+    return this.http.post('https://localhost:3000/api/quiz', payload);
   }
 
   getRandomQuestion(): Observable<any> {
-    return this.http.get('http://localhost:3000/api/quiz/random');
+    return this.http.get('https://localhost:3000/api/quiz/random');
   }
 
   checkAnswer(question: Question, answer: Answer) {
-    return this.http.post(`http://localhost:3000/api/quiz/${question.question_id}/answer`, { answer: answer.content });
+    return this.http.post(`https://localhost:3000/api/quiz/${question.question_id}/answer`, { answer: answer.content });
 
   }
 }

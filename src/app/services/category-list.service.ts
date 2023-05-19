@@ -10,6 +10,6 @@ export class CategoryListService {
   constructor(private http: HttpClient) { }
 
   getCategories(): Observable<any> {
-    return this.http.get('http://localhost:3000/api/categories')
+    return this.http.get('https://localhost:3000/api/categories')
   }
 }

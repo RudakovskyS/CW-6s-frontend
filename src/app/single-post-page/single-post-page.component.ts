@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../dto/post.dto';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-single-post-page',
@@ -9,7 +10,7 @@ import { Post } from '../dto/post.dto';
   styleUrls: ['./single-post-page.component.css']
 })
 export class SinglePostPageComponent implements OnInit {
-  constructor(private postService: PostsService, private route: ActivatedRoute) { }
+  constructor(private postService: PostsService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     var id = 0;
@@ -20,15 +21,19 @@ export class SinglePostPageComponent implements OnInit {
       this.post = data)
   }
 
-  async likePost(id: number) {
-    this.postService.likePost(id).subscribe(data => {
+  likePost(id: number) {
+    this.postService.likePost(id).subscribe(() => {
       this.ngOnInit()
+    }, () => {
+      this._snackBar.open("Вы не вайшлі ў акаўнт", 'Зразумела');
     })
   }
 
-  async dislikePost(id: number) {
-    this.postService.dislikePost(id).subscribe(data => {
+  dislikePost(id: number) {
+    this.postService.dislikePost(id).subscribe(() => {
       this.ngOnInit()
+    }, () => {
+      this._snackBar.open("Вы не вайшлі ў акаўнт", 'Зразумела');
     })
   }
 

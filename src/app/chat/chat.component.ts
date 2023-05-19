@@ -15,11 +15,12 @@ export class ChatComponent implements OnInit {
   messages: any[] = [];
   newMessage!: string
   ngOnInit() {
+    const unique_nums = Math.random() * 200000
     this.currentUser = this.authService.getCurrentUser()
     if (!this.currentUser?.username){
-      this.currentUser = {username: 'ананімны карыстальнік'}
+      this.currentUser = {username: 'ананімны карыстальнік ' + unique_nums.toFixed(0)}
     }
-    this.socket = io('http://localhost:3000', {
+    this.socket = io('https://localhost:3000', {
       transports: ['websocket'],
 				withCredentials: true,
 				extraHeaders: {
@@ -45,6 +46,12 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage(username:string, message: string) {
+    while (message.includes('  '))
+      message = message.replace('  ', ' ')
+      this.newMessage = ''
+    if (message == '' || message === ' ') {
+      throw new Error('this message haven\'t been sent');
+    }
     this.socket.emit('chatMessage', {username: username, message: message});
   }
 

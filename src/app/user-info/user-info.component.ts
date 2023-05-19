@@ -3,8 +3,6 @@ import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../dto/user.dto';
 
-
-
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -20,10 +18,13 @@ export class UserInfoComponent implements OnInit {
     if (url.startsWith('user/')) {
       this.route.params.subscribe(params => {
         id = params['id']
-        this.userService.getUserPosts(id).subscribe((data: User) =>
-          this.user = data)
+        this.userService.getUserPosts(id).subscribe((data: User) => {
+          this.user = data
+          this.percentage = (this.user.correctAnswers * 100 / this.user.quizesTaken).toFixed(0)
+        })
       })
     }
   }
+  percentage!: string;
   user!: User
 }
